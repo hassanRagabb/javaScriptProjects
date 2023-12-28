@@ -1,0 +1,512 @@
+dom: document object model tree --->nodes for tags
+
+
+
+////head and body are sibling 
+
+///html are parent for head and body also
+
+///head and body are child for html
+
+///root is html
+
+///leaf not have child like text image 
+
+
+
+js do code html through run time 
+1- search for node or more than one at same time
+2- action dealing (add-delete-modify)
+
+
+
+
+<script type="text/javascript">
+	var idd=document.getElementById("idddd");
+	or
+	var nodes=document.querySelector("#idddd"); 
+	var iddcontent=idd.innerText;
+	alert(iddcontent);
+</script>
+
+var iddcontent=idd.innerHtml;
+idd.innerHtml=<u>ffffffffffffffffffffff</U> tree +++++++++ zadt
+
+-------------------------------------------------------------
+
+
+var node=document.createElement("b");need to link it 
+node.innerText="iam bold";
+get the element id u need to link this node with it say welcome
+welcome.appenchild(node);
+------------------------------------------------------change the content in parent-----------------------------
+
+
+
+var idd=document.getElementById("idddd");
+var iddparent=idd.parentNode;
+iddparent.innerText="dafafadfadfad";//this line will change the content in parent idd to be dafafadfadfad
+
+---------------------------------------------------------------------------------------------------
+
+
+var idd=document.getElementById("idddd");
+var iddattributet=idd.getAttribute("size");
+alert(iddattributet)
+------------------------------------ setAttribute------------------------------------------------------
+var idd=document.getElementById("idddd");
+var iddattributet=idd.setAttribute("style","size:3;color:red");
+-------------------------------------------------------------------------------------------------------------]
+var idd=document.body;
+idd.innerText="sssssssdsadfsffaf";//all will remove and add this sssssssdsadfsffaf like paragraph
+
+----------------------------------------PARENT NODE--------------------------------------------------]
+
+var idd=document.getElementById("idddd");
+var iddparent=idd.parentNode;
+iddparen.removechild(idd);
+-------------------------------------------------------------------------------------------------------------]
+var idd=document.getElementById("idddd");
+idd.removeAttribute("style")
+
+------------------------------------------search-------------------------------------------------------]
+
+
+------------------------------------------TagName--------------------------------------
+
+get all elements have tag like h1
+var nodes=getElementsByTagName('h1');		//more than one start nodes[0] as array
+
+------------------------------------------className---------
+
+
+get elements have more one tag like h1,div have same class name
+var nodes=getElementsByClassName('iamclass ');			// elements array nodes[0].innerText
+or
+var nodes=d0cument.querySelector(".class"); 
+for(i=0;i<nodes.length;i++)
+{
+	node=nodes[i];
+	node.setAttribute("style","color:red");
+}
+
+
+------------------------------------------nodeName--------------------------------------
+
+var idd=document.getElementById("idddd");
+alert(idd.nodeName)--------------------->tagname like B for the tag<b>welcome</b>
+
+
+------------------------------------------nodeType--------------------------------------
+
+var idd=document.getElementById("idddd");
+alert(idd.nodeType)--------------------->return 1 so its a tag if return 2 means properites attrubites return 3 means text 8 means comment 9 means document root
+
+
+------------------------------------------nodeValue --------------for attribute at nodeType ==2 and 3--------------------------------------
+<form>
+	<input id="idddd" type="text" value="welcome"/>
+</form>
+var idd=document.getElementById("idddd");
+alert(idd.nodeValue) 
+alert(idd.nodeType)  //if return ==1 will return value null ||if =2 means attribute so nodeValue will be name and value like size =50 size is a name and 50 is a value of this attribute here in form the value is  text ||
+			if type ==3 so the value is the text like <h1>welcome</h1>  if 8 comment 9 documnet root 
+
+
+------------------------------------------create Text node --------------
+
+var textnode=document.createTextNode("www.hassan.");
+alert(textnode.nodeType)//3
+
+------------------------------------------ create add Text to tag --------------
+
+var textnode=document.createTextNode("www.hassan.");
+
+var nodes=getElementsByTagName('h1');
+nodes[0].appendchild(textnode);
+
+------------------------------------------ create  tag and add text and add this to body of html--------------
+
+var b_Node=document.createElement("b");
+var u_Node=document.createElement("u");
+var i_Node=document.createElement("i");
+b_Node.innerText="welcome";
+u_Node.innerText="tp";
+i_Node.innerText="js";
+
+var body_node=document.body;
+body_node.appendchild(b_Node);
+body_node.appendchild(u_Node);
+body_node.appendchild(i_Node);
+-----------------------------------------------------------------------------------------------
+------------------------------------------ deal with css elements style for a node-------------
+-----------------------------------------------------------------------------------------------
+var node = document.getElementById("idddd");
+node.style.anyattribetesYOUcanwrite
+node.style.color="red";
+
+---------------------------type of style---------------------
+1)c style
+	first_name_dffaf
+2)pascal style
+	FirstStyle
+3)camel
+	firstNameContent
+---------------------------in style css------------------------------
+1-font_family="Tahoma";
+node.style.fontFamily         //camelCase
+2-background-color
+node.style.backgroundColor
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////					///////////////////////////////////////////////
+/////////////////////////		Events			///////////////////////////////////////////////
+/////////////////////////					///////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+-node have(attr,action,type,css,events)
+
+
+------------events----------------------
+more than type do something call an event 
+
+type event
+-on click do function
+-mouse move
+-mouse over
+-mouse down
+-mouse up
+
+
+---------------------------------onclick---------------------
+var node = document.getElementById("idddd");
+
+node.onfunction
+node.onclick = rotatefunction;
+
+------> for working this model
+
+var node = document.getElementById("idddd");
+function rotatefunction()
+{
+	alert("welcome we are roated ");
+}
+node.onclick = rotatefunction;			
+
+---------------------------------ondbclick  double ,onmouseover---------------------
+var node = document.getElementById("idddd");
+node.ondbclick  = rotatefunction;	//double click
+
+node.onmouseover = rotatefunction;
+
+
+---------------------------------anonymous function have no name---------------------
+var node = document.getElementById("idddd");
+node.onclick = function	()
+{
+	alert("welcome we are roated ");
+};
+
+
+---------------------------------this for the node to use in a function---------------------
+var node = document.getElementById("idddd");
+function	rotatefunction()
+{	this.style.color="red"; 			//this --------->mean for variable node he call this function 
+};
+
+node.onmouseout = rotatefunction;
+
+
+-------------------------------------------here -----------------------------------------
+---------------------------------this for the node to use in a function---------------------
+.classnameInPageCSS
+{	color="red";
+
+}
+------------
+ function	rotatefunction()
+{	this.setAttribute("class","classnameInPageCSS")			classnameInPageCSS USING LIKE .classnameInPageCSS{	color="red";}
+};
+var node = document.getElementById("idddd");
+node.onmouseout = rotatefunction;
+
+------------------------------------------------------------------------------------window event
+ function	rotatefunction(e)
+{	
+	var evt;
+	if(!window.event)
+		evt=e;
+	else
+		evt=e;
+	this.setAttribute("class","classnameInPageCSS")			classnameInPageCSS USING LIKE .classnameInPageCSS{	color="red";}
+	var x=evt.cleintx;
+	var y=evt.clienty;
+	this.innerHTML="X":x+"Y":y;
+	
+};
+var node = document.getElementById("idddd");
+node.onmouseout = rotatefunction;
+
+-------------------------------------------------------sibling and nextSibling---------------------------------------------------------------------------------------
+
+
+var node1=document.createElement("b");
+	
+node1.nextSibling;
+node1.nextSibling.nextSibling;
+node1.previousSibling;
+
+------------------------------
+sibling have problem if we have space space deal as node have empty text
+var node1=document.createElement("b");
+var node2=node1.nextSibling;
+if(node2.nodeType==1){alert("Tag");}
+else if(node2.nodeType==3){alert("TEXT");}
+--------------------------------------------------childNodes----------------------array[0]
+var node1=document.createElement("b");
+var node2=node1.childNodes.length;
+
+
+-------------------------------------------------------time after code will excute (set need clear)---------------------------------------------------------------------------------------
+setTtimeout("code",time) //time 1000mean thanya second
+
+setTtimeout("alert('welcome to js")',3000);//3 seconds 	
+
+==
+
+setTtimeout(function()
+{
+	alert("welcome to js");
+},3000);//3 seconds 
+
+------excute all betwwen {} after 3 seconds
+var	t1 = setTtimeout(function()
+{
+	alert("welcome to js");
+	clearTimeout(t1);
+},3000);
+
+-------------------------------------------------------	repeat after time				---------------------------------------------------------------------------------------
+
+setInterval('alert("welcome to js")',3000);
+
+==
+var v = setInterval(function(){
+
+	alert("welcome to js");
+
+},3000);
+
+----------stop repeat--->>clearInterval
+
+excute only one time
+var v = setInterval(function(){
+
+	alert("welcome to js");
+	clearInterval(v);
+
+},3000);
+----------for repeatation using clearInterval
+
+var i=1;
+var v = setInterval(function(){
+
+	alert("welcome to js");
+	if(i > 4)
+		clearInterval(v);	
+	i++
+
+},3000);
+
+-----------------------------------animation --
+var node = document.getElementById("idddd");
+var x =false
+var v = setInterval(function(){
+	if(x==false)
+		node.style.color="red"
+	else
+		node.style.color="blue"
+
+	x=!x;
+},3000);
+---------------------------------for height
+var node = document.getElementById("idddd");
+h=node.clientHight;//get hight
+h=h+2;
+node.style.height=h+'px'; 
+var v = setInterval(function(){
+	h=h+2;
+	node.style.height=h+'px';
+},1000);
+-----------------------------------------when click on button the button will show another button and one u click again will disaper----------
+https://youtu.be/4rZftSYtH98
+الدرس الثاني والثمانون : حركة الأزرار-الجزء الأول
+
+var node = document.getElementById("target");
+var bnode = document.getElementById("block");
+
+bnode.style.visibility="hidden";
+var s=false;
+function clk(e)
+{
+	if(s==false)
+	{
+		bnode.style.visibility="visible";
+		bnode.style.width="250px";
+	}
+	h=bnode.clientHeight;
+	var the_i=setInterval(function(){
+		if(s==false)
+		{
+			h=h+10;
+			bnode.style.height=h+'px'; 
+		}
+		else
+		{
+			h=h-10;
+			bnode.style.height=h+'px'; 
+		}
+		if((s==false)&&(bnode.clientHeight>=200))
+		{
+			clearInterval(the_i);
+			s=true;
+		}
+		else if((s==true)&&(bnode.clientHeight <=2))
+		{
+			clearInterval(the_i);
+			s=false;
+			bnode.style.visibility="hidden";
+		}
+		
+	},
+}
+
+
+
+node.onclick=clk;
+
+
+-----------------------------------------node----------
+for each node
+-css--------->style
+-events
+3-animation------>setInterval
+-nodeType
+
+-----------------------------------------window---------
+get link"path" u in google--->alert(window.location);// window.alert
+
+
+----------------------------------------navigator---------
+info about browser u use like chrome, mozile firefox
+
+alert(navigator.appCodeName);------------>mozila
+
+alert(navigator.appName);------------>Netscape
+alert(navigator.appVersion);------------>....
+
+
+----------------------------------history	for links------------------
+
+history.length-------------------->//number of links in history
+history.length-------------------->//one page mean one link
+history.back()-------------------->//return to previous page
+history.forward();---------------->//go to the second link
+history.go(1)	------------------>//go to the second link 2 -->forawrd 2 page if mins u will back likehistory.go(-1)
+
+
+
+
+-----------------search internet 
+-event type like mouseover
+-window like window.alert("hi");
+				   
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////								////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////				SYMMARY				///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////								/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+var v1=document.getElementById("idddd");
+var iddcontent=v1.innerText;  //v1.innerText same as v1.value same as v1.innerHTML
+alert(iddcontent);
+
+----------------create element and add to id
+var node=document.createElement("b");need to link it 
+node.innerText="iam bold";
+get the element id u need to link this node with it say welcome
+welcome.appenchild(node);
+
+
+------------------------------------------change parent content------------------------------>nodeHaveID.parentNode;
+
+var idd=document.getElementById("idddd");
+var iddparent=idd.parentNode;
+iddparent.innerText="dafafadfadfad";//this line will change the content in parent idd to be dafafadfadfad
+
+
+---------------------------
+node.setAttribute("style","color:red");
+
+
+----------------------------
+alert(idd.nodeType) ..alert(idd.nodeName)
+
+----------------------------
+nodes[0].appendchild(textnode);
+
+--------------------------------------------------------add node to body-------------------
+var b_Node=document.createElement("u");
+
+b_Node.innerText="welcome";
+
+var body_node=document.body;
+body_node.appendchild(b_Node);
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------					css									-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+var node = document.getElementById("idddd");
+node.style.color="red";
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------					events									-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+var node = document.getElementById("idddd");
+
+node.onclick = rotatefunction;
+
+---------------------------------ondbclick  double ,onmouseover---------------------
+var node = document.getElementById("idddd");
+node.ondbclick  = rotatefunction;	//double click
+
+node.onmouseover = rotatefunction;
+
+---------------------------------
+
+var node1=document.createElement("b");
+	
+node1.nextSibling;
+node1.nextSibling.nextSibling;
+node1.previousSibling;
+
+------------------------------
+sibling have problem if we have space space deal as node have empty text
+var node1=document.createElement("b");
+var node2=node1.nextSibling;
+if(node2.nodeType==1){alert("Tag");}
+else if(node2.nodeType==3){alert("TEXT");}
+
+
+
+
+
+

@@ -1,0 +1,85 @@
+<button onclick="functionName()" type="text"></button>
+
+ondbclick
+onload ---->using with src
+
+<img src="aff" onload="functionName()">
+
+
+- onmousemove // through movement 3la div 
+- onmouseenter // kol ma yro7 ll div unfz function mra wa7da kol ma udkhol
+- onmouseover //herot move 3la width bt3 div msln unfz functio or any son fo them 
+- onmouseout //lma ud5ol wuro7 5arg unfz function
+- onmouseleave
+-ondbclick
+-onload
+
+
+------------------string------------------
+"hello world"
+---same (or)
+"hello \
+world"
+---same
+"hello"+"world"
+
+
+---------------------
+
+		https://youtu.be/WealsoO83T8
+			
+		Unique Coderz Academy
+			58.5K subscribers
+
+1)-var x="12345 7"
+x.length --->7
+2)-var x="learn to be htmler"
+	-x.indexof("learn") //first apper for 12345 will return zero
+	-x.indexof("be",3)//will search for 12345 from start 3 
+3)
+x="learn js and learn html learn"
+	-x.lastindexof("12345" )// 13
+	-x.lastindexof("12345",10) ---->"learn js and "----->0
+
+
+------------------------------------------------------------------------------------------------slice(start,end) 
+var x="htm4 , css , css3 , js , css";
+x.slice(5,9)  will search x from zero will return from index 4, to index 8 index 8 will join
+
+x.slice(-8,-6)//js
+
+-----substring(start,end) 
+var x="htm4 , css , css3 , js , css";
+x.ubstring(7,10)//css
+
+------------------------------------substr(start,length) 
+
+--------------------------------------------------------------------replace
+var x="htm4 , css , css3 , js , css";
+x.replace("css","jquery") //first css only will replace to jquery
+
+-----------------------------------------------------------------------toLowerCase
+var x="welcome";
+x.toLowerCase() //first css only will replace to jquery
+
+
+
+---------------------------------------------------------------------------------------split
+var x="welcome to our website";
+x.split(" ") //will split empty to , ---->welcome,to,our,website
+x.split("l")--->we,come to our website
+----------------string to array using split
+var x="welcome to our website";
+var arr= x.split("") 
+arr[0]
+-------------------------------------------------------------------------------trim()
+var x="		welcome  	";
+var arr= x.trim() ----->>welcom 	(will remove msafat)
+
+
+
+
+
+
+
+
